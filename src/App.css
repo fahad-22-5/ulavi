@@ -116,9 +116,21 @@
   background-color: #FE5B00;
   padding: 10px;
   font-size: 15px;
-  width: 80%;
+  width: 20%;
   color: white;
   transition: 0.3s;
+}
+
+.checkoutBtn{
+  border-style: none;
+  border-radius: 20px;
+  background-color: #FE5B00;
+  padding: 10px;
+  font-size: 15px;
+  width: 27%;
+  color: white;
+  transition: 0.3s;
+  margin: 2px;
 }
 
 .option{
@@ -129,6 +141,15 @@
   border-width: 1px;
   text-align: center;
   padding: 30px;
+  font-size: 20px;
+}
+
+.cell{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .optionsContainer{
@@ -143,22 +164,26 @@
 .btns{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding: 30px;
-  padding-left: 50px;
+  justify-content: space-evenly;
+  width: 40%;
 }
 
 .bookBtn:hover{
   border-radius: 10px;
   background-color: #11ac0b;
-  width: 100%;
+  width: 25%;
+}
+
+.checkoutBtn:hover{
+  border-radius: 10px;
+  background-color: #11ac0b;
+  width: 30%;
 }
 
 .minusBtn:hover{
   border-radius: 10px;
   background-color: #d82b2b;
-  width: 80%;
+  width: 25%;
 }
 
 .minusBtn{
@@ -167,7 +192,7 @@
   background-color: #FE5B00;
   padding: 10px;
   font-size: 15px;
-  width: 70%;
+  width: 20%;
   color: white;
   transition: 0.3s;
 }

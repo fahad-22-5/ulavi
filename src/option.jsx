@@ -1,8 +1,15 @@
 import React from 'react';
+import CartButtons from './cartButtons';
+import './App.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from 'react';
 
 const Option = ({data, setCart, cart, bill, setBill}) => {
 
-    const handleSubmit = () => {
+    const [startDate, setStartDate] = useState(new Date());
+
+    const handleAdd = () => {
         setCart(cart + 1);
         setBill(bill + data.price);
     }
@@ -17,13 +24,29 @@ const Option = ({data, setCart, cart, bill, setBill}) => {
     return (
         <div className="optionsContainer">
                 <div className="option">
-                    One-Day Admission Ticket
-                    <h3>₹ {data.price}</h3>
-
-                    <div className="btns">
-                    <button className='bookBtn' onClick={handleSubmit}>Add to Cart</button>
-                    <button className='minusBtn' onClick={handleMinus}>Remove from Cart</button>
+                    <h3>One-Day Admission Ticket</h3>
+                    <div className="cell">
+                        Adult: ₹{data.price}
+                        <div className='btns'>
+                            <button className='bookBtn' onClick={handleAdd}>+</button>
+                            <button className='minusBtn' onClick={handleMinus}>-</button>
+                        </div>
                     </div>
+                    <div className="cell">
+                        Children: ₹{data.price}
+                        <div className='btns'>
+                            <button className='bookBtn' onClick={handleAdd}>+</button>
+                            <button className='minusBtn' onClick={handleMinus}>-</button>
+                        </div>
+                    </div>
+                    <div className="cell">
+                        Senior Citizen: ₹{data.price}
+                        <div className='btns'>
+                            <button className='bookBtn' onClick={handleAdd}>+</button>
+                            <button className='minusBtn' onClick={handleMinus}>-</button>
+                        </div>
+                    </div>
+                    Select Date: <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                 </div>
             </div>
     );
