@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Option from './option';
+import Collapsible from 'react-collapsible';
 
 const InfoPage = () => {
 
@@ -27,7 +28,10 @@ const InfoPage = () => {
             <div className='desContainer'>
                 <div className="leftColumn">
                     <div className="dbox">
-                    <p className='desText'>{data.description}</p>
+                    <p className='desText'>Universal Studios Singapore is a theme park located within Resorts World Sentosa on Sentosa Island, Singapore. It features 28 rides, shows, and attractions in seven themed zones. It was a key component of Genting's bid for the right to build Singapore's second integrated resort. On 8 December 2006, the Singapore government announced that the consortium had won the bid. </p>
+                    <Collapsible trigger="Click Here to Read More">
+                        <p className='desText'> {data.description}</p>
+                    </Collapsible>
                     </div>
 
                     <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
