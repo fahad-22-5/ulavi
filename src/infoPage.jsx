@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Option from './option';
 import Collapsible from 'react-collapsible';
+import ImageGallery from "react-image-gallery";
 
 const InfoPage = () => {
 
@@ -16,7 +17,29 @@ const InfoPage = () => {
         price: 4031
     }
 
-    
+    const images = [
+        {
+            original: "https://img.traveltriangle.com/blog/wp-content/uploads/2018/08/shutterstock_203847640.jpg",
+            thumbnail: "https://img.traveltriangle.com/blog/wp-content/uploads/2018/08/shutterstock_203847640.jpg",        },
+        {
+            original: "https://www.rwsentosa.com/-/jssmedia/project/non-gaming/rwsentosa/attractions/universal-studios-singapore/zones/uss-thelostworld-750-x-422.jpg?h=422&iar=0&w=750&rev=422aec23797f4c6eb9d6999c38bc2e73&hash=5D64FB8901581F9E1E9BAC9E3CDF8F71",
+            thumbnail: "https://www.rwsentosa.com/-/jssmedia/project/non-gaming/rwsentosa/attractions/universal-studios-singapore/zones/uss-thelostworld-750-x-422.jpg?h=422&iar=0&w=750&rev=422aec23797f4c6eb9d6999c38bc2e73&hash=5D64FB8901581F9E1E9BAC9E3CDF8F71",
+        },
+        {
+            original: "https://mediaim.expedia.com/destination/2/7310799cda06face193ea10461d2b1bb.jpg",
+            thumbnail: "https://mediaim.expedia.com/destination/2/7310799cda06face193ea10461d2b1bb.jpg",
+        },
+        {
+            original: "https://cdn.getyourguide.com/img/location/5729aea8abe7e.jpeg/68.jpg",
+            thumbnail: "https://cdn.getyourguide.com/img/location/5729aea8abe7e.jpeg/68.jpg",
+        },
+        {
+            original: "https://www.neverendingvoyage.com/wp-content/uploads/2020/03/universal-studios-singapore-6.jpg",
+            thumbnail: "https://www.neverendingvoyage.com/wp-content/uploads/2020/03/universal-studios-singapore-6.jpg",
+        }
+    ]
+
+
     return (
         <div className='info'>
             <h1 className='headerTxt'>{data.name}</h1>
@@ -33,12 +56,12 @@ const InfoPage = () => {
                         <p className='desText'> {data.description}</p>
                     </Collapsible>
                     </div>
+                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
+                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
+                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
+                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
+                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
 
-                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
-                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
-                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
-                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
-                    <Option data = {data} setCart = {setCart} cart = {cart} bill = {bill} setBill = {setBill}/>
                 </div>
                 <div className="rightColumn">
                 <div className="innerCon">
@@ -52,7 +75,9 @@ const InfoPage = () => {
                     <div className="innerCon2">
                         From <h3>₹ {data.price}</h3>
                         {/* <button className='bookBtn'>Book Now</button> */}
+                    <ImageGallery items={images} />
                     </div>
+
                 </div>
             </div>            
         </div>
